@@ -1,0 +1,106 @@
+.header-top{
+    display: flex;
+    flex-direction: row;
+    height: 58px;
+    background-color: black;
+    font-size: 18px;
+
+    .logo-button,
+    .settings-button,
+    .account-button{
+        box-sizing: border-box;
+        border: 1px solid transparent;
+        cursor: pointer;
+    }
+
+    .logo-button:hover,
+    .settings-button:hover,
+    .account-button:hover{
+        border: 1px dotted lightblue;
+    }
+
+    .logo-button{
+        box-sizing: border-box;
+        text-align: center;
+        width: 60px;
+        border-right: 1px solid lightblue;
+
+        a{
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+
+            img{
+                object-fit: cover;
+                width: 28px;
+            }
+        }
+    }
+
+    .app-name{
+        font-size: 28px;
+        color: lightblue;
+        line-height: 56px;
+        width: 300px;
+        padding-left: 30px;
+    }
+
+    .search-bar{
+        flex: 1;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        .search-box{
+            flex: 1;
+            position:relative;
+
+            img{
+                object-fit: cover;
+                max-height: 24px;
+                position: absolute;
+                margin-top: 4px;
+                margin-left: 4px;
+            }
+
+            input{
+                padding-left: 30px;
+                height:33px;
+                width:80%;
+                background-color: lightblue;
+                color: black;
+                border-width: 0;
+                border-radius: 3px;
+                font-size: 18px;
+            }
+        }
+    }
+    
+    .menu-h-wrapper{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        color: lightblue;
+
+        .settings-button,
+        .account-button{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding: 0 10px;
+            height: 100%;
+        }
+
+        .account-button{
+            gap: 10px;
+        }
+
+        img{
+            object-fit: cover;
+            width: 28px;
+        }
+    }
+}

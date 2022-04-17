@@ -1,0 +1,48 @@
+.menu-v-wrapper{
+    display: flex;
+    flex-direction: column;
+    width: 60px;
+    height:100%;
+    border-right: 1px solid lightblue;
+    background-color: darkred;
+    box-sizing: border-box;
+
+    ul{
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+
+        li{
+            box-sizing: border-box;
+            border: 1px solid transparent;
+            padding: 10px;
+            cursor: pointer;
+            
+            
+
+            &:hover{
+                border: 1px dotted lightblue;
+            }
+    
+            a{
+                height: 100%;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-decoration: none;
+                font-size: 10px;
+                color: white;
+
+                img{
+                    object-fit: cover;
+                    width: 28px;
+                }
+    
+            }
+        }
+    }
+}
