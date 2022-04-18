@@ -17,10 +17,10 @@ const Chat: FC<{ chat: IChat }> = ({ chat }) => {
         </div>
         <div className={styles.data}>
             <div className={styles.actor}>
-                <div className={styles.name}>{chat.name?.lastname}, {chat.name?.firstname}</div>
-                <div className={styles['last-date']}>{chat.username}</div>
+                <div className={styles.name}>{chat.title}</div>
+                <div className={styles['last-date']}>{chat.id}</div>
             </div>        
-            <div className={styles['last-message']}>{chat.email}</div>
+            <div className={styles['last-message']}>{chat.body}</div>
         </div>
       </div>
     );

@@ -6,6 +6,7 @@ import Chats from './components/Chats/Chats';
 import styles from './App.module.scss'
 import { Provider } from 'react-redux';
 import { store } from './store/store';
+import Messages from './components/Messages/Messages';
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
         <div className={styles['main-wrapper']}>
           <Menu />
           <Chats />
+          <Messages />
         </div>
       </div>
     </Provider>

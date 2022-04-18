@@ -3,9 +3,9 @@ import { IChat } from './chat.types'
 
 export const chatApi = createApi({
     reducerPath: 'api/chats',
-    baseQuery: fetchBaseQuery({baseUrl: 'https://fakestoreapi.com/'}),
+    baseQuery: fetchBaseQuery({baseUrl: 'https://jsonplaceholder.typicode.com/'}),
     endpoints: build => ({
-        getChats: build.query<IChat[], number>({query: (limit = 20) => `users?limit=${limit}`})
+        getChats: build.query<IChat[], number>({query: (limit = 20) => `posts?limit=${limit}`})
     })
 })
 export const { useGetChatsQuery } = chatApi
