@@ -1,12 +1,18 @@
-import React, { FC } from "react"
+import React, { FC, useState } from "react"
 import { IChat } from "../../store/chats/chat.types";
 
 import styles from './Chat.module.scss'
 import accountImage from '../../assets/img/account.svg'
 
 const Chat: FC<{ chat: IChat }> = ({ chat }) => {
+    const [selected, setSelected] = useState<boolean>(false)
+
+    React.useEffect(() => {
+        chat.selected = selected;
+    }, [selected])
+
     return (
-      <div className={styles.chat}>
+      <div className={`${styles.chat} ${selected ? 'selected' : null}`} onClick={() => setSelected(true)}>
         <div className={styles.avatar}>            
             <img src={accountImage} alt="" />
         </div>

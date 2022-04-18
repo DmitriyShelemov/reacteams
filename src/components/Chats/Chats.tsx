@@ -20,7 +20,7 @@ const Chats: FC = () => {
         ) : (
             <div className={styles.list}>
                 <ul>
-                    {data?.map((chat: any, idx: number) => (    
+                    {data?.map((chat: IChat, idx: number) => (    
                         <Chat key={`chat_${idx}`} chat={chat} />
                     ))}
                 </ul>

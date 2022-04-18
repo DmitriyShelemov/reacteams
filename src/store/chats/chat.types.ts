@@ -11,6 +11,7 @@ export interface IChat {
     state: string;
     lastDate: string;
     lastMessage: string;
+    selected: boolean;
 }
 
 interface IName {

@@ -1,5 +1,42 @@
 .chats{
     height: 100%;
-    overflow-y: auto;
-    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    background-color: lightblue;
+
+    .title{
+        line-height: 40px;
+        border-bottom: 1px solid darkred;
+        padding-left: 10px;
+        font-weight: bold;
+    }
+
+    .list{
+        flex: 1;
+        box-sizing: content-box;
+        overflow: hidden;
+        padding: 4px;
+
+        &:hover{
+            overflow-y: auto;
+        }
+
+        ul{
+            padding: 0;
+            margin: 0;
+        }
+    }
+
+    .list::-webkit-scrollbar {
+      width: 10px;
+      background-color: lightblue;
+    }
+    
+    .list::-webkit-scrollbar-thumb {
+      height: 56px;
+      border-radius: 8px;
+      border: 1px solid transparent;
+      background-clip: content-box;
+      background-color: black;
+    }
 }

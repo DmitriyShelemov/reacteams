@@ -1,0 +1,70 @@
+.chat{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    gap: 6px;
+    max-width: 300px;
+    overflow: hidden;
+    padding: 6px;
+    border-radius: 4px;
+    cursor: pointer;
+
+    &:hover{
+        background-color: whitesmoke;
+    }
+
+    &.selected{
+        background-color: white;
+    }
+    
+    .avatar{
+        img{
+            object-fit: cover;
+            width: 28px;
+        }
+    }
+
+    .data{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        flex: 1;
+
+        .actor{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+
+            .name{
+                width: 150px;
+            }
+
+            .last-date{
+                width: 40px;
+            }
+
+            .last-date, 
+            .name{
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+
+        .last-message{
+            width: 200px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .last-date,
+        .last-message{
+            font-size: 0.8em;
+        }
+    }
+}
