@@ -3,16 +3,15 @@ import { IChat } from "../../store/chats/chat.types";
 
 import styles from './Chat.module.scss'
 import accountImage from '../../assets/img/account.svg'
+import { useActions } from "../../hooks/useActions";
+import { useTypedSelector } from "../../hooks/useTypedSelector";
 
 const Chat: FC<{ chat: IChat }> = ({ chat }) => {
-    const [selected, setSelected] = useState<boolean>(false)
-
-    React.useEffect(() => {
-        chat.selected = selected;
-    }, [selected])
+    const {setChat} = useActions()
+    const {activeChat} = useTypedSelector(state => state)
 
     return (
-      <div className={`${styles.chat} ${selected ? 'selected' : null}`} onClick={() => setSelected(true)}>
+      <div className={`${styles.chat} ${activeChat.chat?.id === chat.id ? styles.selected : ''}`} onClick={() => setChat(chat)}>
         <div className={styles.avatar}>            
             <img src={accountImage} alt="" />
         </div>

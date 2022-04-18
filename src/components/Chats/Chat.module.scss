@@ -13,10 +13,6 @@
     &:hover{
         background-color: whitesmoke;
     }
-
-    &.selected{
-        background-color: white;
-    }
     
     .avatar{
         img{
@@ -67,4 +63,8 @@
             font-size: 0.8em;
         }
     }
+}
+
+.selected{
+    background-color: white;
 }
