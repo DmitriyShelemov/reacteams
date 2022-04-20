@@ -7,7 +7,8 @@ export const store = configureStore({
     reducer: { 
         [chatApi.reducerPath]: chatApi.reducer, 
         [messageApi.reducerPath]: messageApi.reducer, 
-        activeChat: activeChatReducer },
+        activeChat: activeChatReducer 
+    },
     middleware: getDefaultMiddleware => getDefaultMiddleware().concat(chatApi.middleware),
 })
 

@@ -7,7 +7,7 @@ import styles from './Chats.module.scss'
 
 const Chats: FC = () => {
     const {data, isLoading, error } = useGetChatsQuery(20)
-
+    
 
     return (
       <div className={styles.chats}>

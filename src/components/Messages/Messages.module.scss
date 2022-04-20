@@ -29,12 +29,14 @@
         }
     }
 
-    .list::-webkit-scrollbar {
+    .list::-webkit-scrollbar,
+    div[data-slate-editor="true"]::-webkit-scrollbar {
       width: 10px;
       background-color: lightblue;
     }
     
-    .list::-webkit-scrollbar-thumb {
+    .list::-webkit-scrollbar-thumb,
+    div[data-slate-editor="true"]::-webkit-scrollbar-thumb {
       height: 56px;
       border-radius: 8px;
       border: 1px solid transparent;
@@ -43,6 +45,14 @@
     }
 
     .editor{
-        height:150px;
+        height:200px;
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+
+        div[data-slate-editor="true"]{
+            flex: 1;
+            overflow: auto;
+        }
     }
 }

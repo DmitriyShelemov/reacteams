@@ -1,34 +1,16 @@
-import React, { FC, useState } from "react"
+import React, { FC, useState, useMemo } from "react"
 import { useTypedSelector } from "../../hooks/useTypedSelector";
 import { useGetMessagesQuery } from "../../store/messages/message.api";
 import { IMessage } from "../../store/messages/message.types";
 
+import RteEditor from '../Slate/RteEditor';
 import Message from './Message';
 import styles from './Messages.module.scss'
-
-import { createEditor } from 'slate'
-import { Slate, Editable, withReact } from "slate-react"
-import { BaseEditor, Descendant } from 'slate'
-import { ReactEditor } from 'slate-react'
-
-type CustomElement = { type: 'paragraph'; children: CustomText[] }
-type CustomText = { text: string }
-
-declare module 'slate' {
-  interface CustomTypes {
-    Editor: BaseEditor & ReactEditor
-    Element: CustomElement
-    Text: CustomText
-  }
-}
-
-const initialValue:any = []
 
 const Messages: FC = () => {
     const {activeChat} = useTypedSelector(state => state)
     const {data, isLoading, error } = useGetMessagesQuery(activeChat.chat?.id)
-    const [editor] = useState(() => withReact(createEditor()))
-
+    
     return (
         <div className={styles.messages}>
             <div className={styles.title}>{activeChat.chat?.title}</div>
@@ -48,9 +30,7 @@ const Messages: FC = () => {
             )}
             
             <div className={styles.editor}>
-                <Slate editor={editor} value={initialValue}>
-                    <Editable />
-                </Slate>
+                <RteEditor/>
             </div>
         </div>
     )
