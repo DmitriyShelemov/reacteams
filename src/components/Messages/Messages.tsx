@@ -19,19 +19,23 @@ const Messages: FC = () => {
                 'Loading...'
             ) : error ? (
                 <div>error</div>
+            ) : !activeChat.chat ? (
+                <div></div>
             ) : (
-                <div className={styles.list}>
-                    <ul>
-                        {data?.map((message: IMessage, idx: number) => (    
-                            <Message key={`chat_${idx}`} message={message} />
-                        ))}
-                    </ul>
+                <div className={styles.content}>
+                    <div className={styles.list}>
+                        <ul>
+                            {data?.map((message: IMessage, idx: number) => (    
+                                <Message key={`chat_${idx}`} message={message} />
+                            ))}
+                        </ul>
+                    </div>
+                    <div className={styles.editor}>
+                        <RteEditor/>
+                    </div>
                 </div>
             )}
             
-            <div className={styles.editor}>
-                <RteEditor/>
-            </div>
         </div>
     )
   }
