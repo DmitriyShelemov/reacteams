@@ -1,0 +1,30 @@
+.overlay{
+    display: flex;
+    justify-items: center;
+    align-items: center;
+
+    .signin{
+        background-color: floralwhite;
+        box-shadow: 0px 0px 2px 3px lightblue;
+        border-radius: 4px;
+        color: brown;
+        padding: 6px 16px;
+        font-size: 28px;
+        margin: auto;
+        cursor: pointer;
+
+        &:hover,
+        &:focus {
+            box-shadow: 0px 0px 10px 14px lightblue;
+            animation-name: shadow;
+            animation-iteration-count: infinite;
+            animation-duration: 1s;
+        }
+    }
+}
+
+@keyframes shadow {
+    from {box-shadow: 0px 0px 2px 3px lightblue}
+    50% {box-shadow: 0px 0px 10px 14px lightblue}
+    to {box-shadow: 0px 0px 2px 3px lightblue}
+}
